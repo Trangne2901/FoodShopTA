@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(name="userServlet", value = "/user")
 public class UserServlet extends HttpServlet {
@@ -38,6 +39,18 @@ public class UserServlet extends HttpServlet {
             }
         }
     }
+    private void userRegister(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
+        String fullName=req.getParameter("fullname");
+        String phoneNumber=req.getParameter("phoneNumber");
+        String address=req.getParameter("address");
+        String email= req.getParameter("email");
+        String password=req.getParameter("password");
+        String urlAvatar=req.getParameter("urlAvatar");
+        User newUser= new User(fullName,phoneNumber,address,email,password,urlAvatar);
+        userService.registerUser(newUser);
+        RequestDispatcher dispatcher=req.getRequestDispatcher("view/login.jsp");
+        dispatcher.forward(req,resp);
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,6 +63,12 @@ public class UserServlet extends HttpServlet {
             case "login":
                 userLogin(req,resp);
                 break;
+            case "register":
+                try {
+                    userRegister(req,resp);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
         }
     }
 
