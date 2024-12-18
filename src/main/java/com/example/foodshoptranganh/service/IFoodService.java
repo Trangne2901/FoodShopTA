@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface IFoodService {
     List<Food> getAllFoodItems();
-    public void addFood(Food food);
-    void deleteFood(int foodItemID) throws SQLException;
+    void addFood(Food food);
+    void updateFood(int foodItemID,Food food);
+    void deleteFood(int foodItemID) ;
+    Food getFoodById(int foodItemID);
 }
