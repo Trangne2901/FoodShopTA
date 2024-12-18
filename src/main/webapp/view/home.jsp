@@ -15,14 +15,14 @@
         <li><a href="#"><i class="icon">📊</i> Doanh thu</a></li>
     </ul>
     <div class="logout">
-        <a href="/view/logout.jsp"><i class="icon">🚪</i> Đăng xuất</a>
+        <a href="/user?action=logout"><i class="icon">🚪</i> Đăng xuất</a>
     </div>
 </div>
 
 <div class="content">
     <h1>Danh sách Món Ăn</h1>
     <div>
-        <a href="/view/addFood.jsp">
+        <a href="/homeAdmin?action=addFood">
             <button style="margin-bottom: 10px; padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer;">
                 ➕ Thêm Món Ăn
             </button>
@@ -52,12 +52,11 @@
                 <td>${food.description}</td>
                 <td>${food.type}</td>
                 <td>${food.stock == true ? "Còn hàng" : "Hết hàng"}</td>
-                <!-- Nút sửa và xóa -->
                 <td>
-                    <a href="/view/editFood.jsp?foodItemID=${food.foodItemID}">
+                    <a href="/homeAdmin?action=edit&foodItemID=${food.foodItemID}">
                         <button style="background-color: #ffc107; color: black; border: none; padding: 5px; cursor: pointer;">✏️ Sửa</button>
                     </a>
-                    <a href="/deleteFood?foodItemID=${food.foodItemID}" onclick="return confirm('Bạn có chắc muốn xóa món ăn này?');">
+                    <a href="/homeAdmin?action=delete&foodItemID=${food.foodItemID}" onclick="return confirm('Bạn có chắc muốn xóa món ăn này?');">
                         <button style="background-color: #dc3545; color: white; border: none; padding: 5px; cursor: pointer;">🗑️ Xóa</button>
                     </a>
                 </td>
