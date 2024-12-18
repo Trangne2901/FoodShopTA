@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -75,130 +76,24 @@
     <section id="food">
         <h3>Our Dishes</h3>
         <div id="dishes">
-            <div class="dish-one">
-                <img src="https://food.ibin.vn/images/data/product/mi-kim-chi-bo/mi-kim-chi-bo-001.jpg"/>
-                <div class="price">
-                    <p class="dish">
-                        DISH 1
-                    </p>
-                    <p class="cost">
-                        $29.99
-                    </p>
-                </div>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia atque excepturi, qui cumque error
-                    sequi!
-                </p>
-                <div class="icons">
-                    <div class="clock">
-                        <i class="fa fa-clock"></i><span>30 mins</span>
+            <c:forEach var="food" items="${foodList}">
+                <div class="dish-item">
+                    <img src="${food.image}" alt="${food.name}">
+                    <div class="price">
+                        <p class="dish">${food.name}</p>
+                        <p class="cost">${food.price}</p>
                     </div>
-                </div>
-                <button>Order Now</button>
-            </div>
-            <div class="dish-two">
-                <img src="https://cdn.diemnhangroup.com/seoulacademy/2023/04/cach-lam-tra-tac-bang-tra-kho-1.jpg"/>
-                <div class="price">
-                    <p class="dish">
-                        DISH 2
-                    </p>
-                    <p class="cost">
-                        $30.00
-                    </p>
-                </div>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptas recusandae, iusto fuga est
-                    delectus.
-                </p>
-                <div class="icons">
-                    <div class="clock">
-                        <i class="fa fa-clock"></i><span>30 mins</span>
+                    <p class="text">${food.description}</p>
+                    <div class="icons">
+                        <div class="clock">
+                            <i class="fa fa-clock"></i><span>30 mins</span>
+                        </div>
                     </div>
+                    <button>Order Now</button>
                 </div>
-                <button>Order Now</button>
-            </div>
-            <div class="dish-three">
-                <img src="https://food.ibin.vn/images/data/product/mi-kim-chi-bo/mi-kim-chi-bo-001.jpg"/>
-                <div class="price">
-                    <p class="dish">
-                    </p>
-                    <p class="cost">
-                        $25.87
-                    </p>
-                </div>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque unde quasi culpa quae in vero?
-                </p>
-                <div class="icons">
-                    <div class="clock">
-                        <i class="fa fa-clock"></i><span>30 mins</span>
-                    </div>
-                </div>
-                <button>Order Now</button>
-            </div>
-            <div class="dish-four">
-                <img src="https://food.ibin.vn/images/data/product/mi-kim-chi-bo/mi-kim-chi-bo-001.jpg"/>
-                <div class="price">
-                    <p class="dish">
-                        DISH 4
-                    </p>
-                    <p class="cost">
-                        $27.87
-                    </p>
-                </div>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit
-                </p>
-                <div class="icons">
-                    <div class="clock">
-                        <i class="fa fa-clock"></i><span>30 mins</span>
-                    </div>
-                </div>
-                <button>Order Now</button>
-            </div>
-            <div class="dish-five">
-                <img src="https://food.ibin.vn/images/data/product/mi-dui-ga-kim-chi/mi-dui-ga-kim-chi-001.jpg"/>
-                <div class="price">
-                    <p class="dish">
-                        Mì Cay Đùi Gà
-                    </p>
-                    <p class="cost">
-                        60.000VNĐ
-                    </p>
-                </div>
-                <p class="text">
-                    Mì cay với thịt gà ngon, thấm gia vị
-                </p>
-                <div class="icons">
-                    <div class="clock">
-                        <i class="fa fa-clock"></i><span>30 mins</span>
-                    </div>
-                </div>
-                <button>Order Now</button>
-            </div>
-            <div class="dish-six">
-                <img src="https://food.ibin.vn/images/data/product/mi-kim-chi-bo/mi-kim-chi-bo-001.jpg"/>
-                <div class="price">
-                    <p class="dish">
-                        Mỳ cay bò
-                    </p>
-                    <p class="cost">
-                        65.000VNĐ
-                    </p>
-                </div>
-                <p class="text">
-                    Mì cay với thịt bò tươi mềm và nước dùng cay đậm đà
-                </p>
-                <div class="icons">
-                    <div class="clock">
-                        <i class="fa fa-clock"></i><span>30 mins</span>
-                    </div>
-                </div>
-                <button>Order Now</button>
-            </div>
+            </c:forEach>
         </div>
     </section>
 </main>
-<script src="js/userpage.js"></script>
 </body>
 </html>

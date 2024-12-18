@@ -169,10 +169,10 @@ img {
     padding-top: 15px;
 }
 .clock > i, .scale > i, .ban > i {
-    color:rgb(245, 245, 10);
+    color: rgb(128, 42, 31);
 }
 .clock > span, .scale > span, .ban > span {
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-family: 'Arima', cursive;
     padding: 2px;
