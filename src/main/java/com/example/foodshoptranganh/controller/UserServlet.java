@@ -1,6 +1,8 @@
 package com.example.foodshoptranganh.controller;
 
 import com.example.foodshoptranganh.model.User;
+import com.example.foodshoptranganh.service.FoodService;
+import com.example.foodshoptranganh.service.IFoodService;
 import com.example.foodshoptranganh.service.IUserService;
 import com.example.foodshoptranganh.service.UserService;
 import sun.rmi.server.Dispatcher;
@@ -17,6 +19,7 @@ import java.sql.SQLException;
 @WebServlet(name="userServlet", value = "/user")
 public class UserServlet extends HttpServlet {
     private IUserService userService = new UserService();
+    private IFoodService foodService = new FoodService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,6 +34,7 @@ public class UserServlet extends HttpServlet {
             System.out.println("Loi");
         }else {
             if(user.getRole().equals("Admin")){
+                req.setAttribute("foodList",foodService.getAllFoodItems());
                 RequestDispatcher dispatcher = req.getRequestDispatcher("view/home.jsp");
                 dispatcher.forward(req,resp);
             }else if (user.getRole().equals("User")) {
