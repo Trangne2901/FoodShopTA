@@ -1,9 +1,6 @@
 package com.example.foodshoptranganh.controller;
-
 import com.example.foodshoptranganh.model.Food;
 import com.example.foodshoptranganh.service.FoodService;
-import com.example.foodshoptranganh.service.IFoodService;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;

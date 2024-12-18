@@ -41,12 +41,13 @@ public class UserServlet extends HttpServlet {
         if(user == null){
             System.out.println("Loi");
         }else {
+            req.setAttribute("foodList",foodService.getAllFoodItems());
+
             if(user.getRole().equals("Admin")){
-                req.setAttribute("foodList",foodService.getAllFoodItems());
                 RequestDispatcher dispatcher = req.getRequestDispatcher("view/home.jsp");
                 dispatcher.forward(req,resp);
             }else if (user.getRole().equals("User")) {
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/home.jsp");
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/userpage.jsp");
                 dispatcher.forward(req, resp);
             }
         }
