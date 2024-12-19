@@ -9,6 +9,6 @@ public interface IFoodService {
     List<Food> getAllFoodItems();
     void addFood(Food food);
     void updateFood(int foodItemID,Food food);
-    void deleteFood(int foodItemID) ;
+//    void deleteFood(int foodItemID) ;
     Food getFoodById(int foodItemID);
 }

@@ -72,22 +72,22 @@ public class FoodService implements IFoodService {
             throw new RuntimeException(e);
         }
     }
-    @Override
-    public void deleteFood(int foodItemID) {
-        String sql = "DELETE FROM food WHERE foodItemID = ?";
-        try (Connection connection = connectJDBC.getConnection();
-             PreparedStatement pre = connection.prepareStatement(sql)) {
-            pre.setInt(1, foodItemID);
-            int rowsAffected = pre.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("Món ăn đã được xóa thành công.");
-            } else {
-                System.out.println("Không tìm thấy món ăn với ID đã cho.");
-            }
-        } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Lỗi khi xóa món ăn", e);
-        }
-    }
+//    @Override
+//    public void deleteFood(int foodItemID) {
+//        String sql = "DELETE FROM food WHERE foodItemID = ?";
+//        try (Connection connection = connectJDBC.getConnection();
+//             PreparedStatement pre = connection.prepareStatement(sql)) {
+//            pre.setInt(1, foodItemID);
+//            int rowsAffected = pre.executeUpdate();
+//            if (rowsAffected > 0) {
+//                System.out.println("Món ăn đã được xóa thành công.");
+//            } else {
+//                System.out.println("Không tìm thấy món ăn với ID đã cho.");
+//            }
+//        } catch (SQLException e) {
+//            logger.log(Level.SEVERE, "Lỗi khi xóa món ăn", e);
+//        }
+//    }
 
     @Override
     public Food getFoodById(int foodItemID) {
