@@ -11,7 +11,6 @@
     <div class="content">
         <div class="image-section">
             <img id="foodImage" src="${food.image}" alt="Hình ảnh món ăn" />
-            <input type="text" id="image" name="image" value="${food.image}" placeholder="URL hình ảnh mới" />
         </div>
         <div class="info-section">
             <form action="/homeAdmin?action=editFood" method="post">
@@ -25,6 +24,9 @@
 
                 <label for="description">Mô tả:</label>
                 <textarea id="description" name="description" rows="4" required>${food.description}</textarea>
+
+                <label for="image">Link anh </label>
+                <input type="text" id="image" name="image" value="${food.image}"/>
 
                 <label for="type">Loại món ăn:</label>
                 <input type="text" id="type" name="type" value="${food.type}" required>

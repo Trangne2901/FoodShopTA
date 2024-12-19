@@ -25,7 +25,7 @@ public class FoodService implements IFoodService {
             while (resultSet.next()) {
                 int foodItemID = resultSet.getInt("foodItemID");
                 String name = resultSet.getString("name");
-                double price = resultSet.getDouble("price");
+                int price = resultSet.getInt("price");
                 String description = resultSet.getString("description");
                 String image = resultSet.getString("image");
                 String type = resultSet.getString("type");
@@ -63,8 +63,8 @@ public class FoodService implements IFoodService {
             pre.setString(1, food.getName());
             pre.setDouble(2, food.getPrice());
             pre.setString(3, food.getDescription());
-            pre.setString(4, food.getType());
-            pre.setString(5, food.getImage());
+            pre.setString(4, food.getImage());
+            pre.setString(5, food.getType());
             pre.setBoolean(6, food.isStock());
             pre.setInt(7, food.getFoodItemID());
             pre.execute();
@@ -99,7 +99,7 @@ public class FoodService implements IFoodService {
             try (ResultSet resultSet = pre.executeQuery()) {
                 if (resultSet.next()) {
                     String name = resultSet.getString("name");
-                    double price = resultSet.getDouble("price");
+                    int price = resultSet.getInt("price");
                     String description = resultSet.getString("description");
                     String image = resultSet.getString("image");
                     String type = resultSet.getString("type");

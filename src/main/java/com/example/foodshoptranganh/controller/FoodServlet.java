@@ -58,7 +58,8 @@ public class FoodServlet extends HttpServlet {
             dispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
-        }    }
+        }
+    }
 
     private void adminDeleteFood(HttpServletRequest request, HttpServletResponse response) {
         int foodItemID = Integer.parseInt(request.getParameter("foodItemID"));
@@ -66,11 +67,13 @@ public class FoodServlet extends HttpServlet {
             foodService.deleteFood(foodItemID);
             showAllFoodAction(request, response);
         } catch (ServletException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
-    private void showAllFoodAction(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+
+    private void showAllFoodAction(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException {
         try {
             List<Food> foodList = foodService.getAllFoodItems();
             request.setAttribute("foodList", foodList);
@@ -84,7 +87,8 @@ public class FoodServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
@@ -111,12 +115,12 @@ public class FoodServlet extends HttpServlet {
     private void adminUpdateFood(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         int foodItemID = Integer.parseInt(request.getParameter("foodItemID"));
         String name = request.getParameter("name");
-        double price = Double.parseDouble(request.getParameter("price"));
+        int price = Integer.parseInt(request.getParameter("price"));
         String description = request.getParameter("description");
         String type = request.getParameter("type");
         String image = request.getParameter("image");
         boolean stock = Boolean.parseBoolean(request.getParameter("stock"));
-        Food food = new Food(foodItemID, name, price, description, type, image, stock);
+        Food food = new Food(foodItemID, name, price, description, image, type, stock);
         foodService.updateFood(foodItemID, food);
         showAllFoodAction(request, response);
     }
@@ -124,7 +128,7 @@ public class FoodServlet extends HttpServlet {
     private void adminAddFood(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String name = request.getParameter("name");
         String image = request.getParameter("image");
-        double price = Double.parseDouble(request.getParameter("price"));
+        int price = Integer.parseInt(request.getParameter("price"));
         String description = request.getParameter("description");
         String type = request.getParameter("type");
         Food food = new Food(name, price, description, image, type);

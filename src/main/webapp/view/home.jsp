@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -48,13 +49,13 @@
                 <td>${food.foodItemID}</td>
                 <td><img style="width: 50px;height:50px" src="${food.image}" alt="Anh"></td>
                 <td>${food.name}</td>
-                <td>${food.price}</td>
+                <td><fmt:formatNumber value="${food.price}"/></td>
                 <td>${food.description}</td>
                 <td>${food.type}</td>
                 <td>${food.stock == true ? "Còn hàng" : "Hết hàng"}</td>
                 <td>
                     <a href="/homeAdmin?action=edit&foodItemID=${food.foodItemID}">
-                        <button style="background-color: #ffc107; color: black; border: none; padding: 5px; cursor: pointer;">✏️ Sửa</button>
+                        <button style="background-color: #ffc107; color: black; border: none; padding: 5px;margin-bottom: 5px; cursor: pointer;">✏️ Sửa</button>
                     </a>
                     <a href="/homeAdmin?action=delete&foodItemID=${food.foodItemID}" onclick="return confirm('Bạn có chắc muốn xóa món ăn này?');">
                         <button style="background-color: #dc3545; color: white; border: none; padding: 5px; cursor: pointer;">🗑️ Xóa</button>
