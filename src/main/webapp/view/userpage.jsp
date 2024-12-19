@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -81,7 +82,7 @@
                     <img src="${food.image}" alt="${food.name}">
                     <div class="price">
                         <p class="dish">${food.name}</p>
-                        <p class="cost">${food.price}</p>
+                        <p class="cost"><fmt:formatNumber value="${food.price}" type="currency" currencySymbol="VND"/></p>
                     </div>
                     <p class="text">${food.description}</p>
                     <div class="icons">

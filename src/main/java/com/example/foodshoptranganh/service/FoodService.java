@@ -25,7 +25,7 @@ public class FoodService implements IFoodService {
             while (resultSet.next()) {
                 int foodItemID = resultSet.getInt("foodItemID");
                 String name = resultSet.getString("name");
-                double price = resultSet.getDouble("price");
+                int price = resultSet.getInt("price");
                 String description = resultSet.getString("description");
                 String image = resultSet.getString("image");
                 String type = resultSet.getString("type");
@@ -44,10 +44,10 @@ public class FoodService implements IFoodService {
         try (Connection conn = connectJDBC.getConnection();
              PreparedStatement pre = conn.prepareStatement(sql)) {
             pre.setString(1, food.getName());
-            pre.setString(2,food.getImage());
-            pre.setDouble(3,food.getPrice());
-            pre.setString(4,food.getDescription());
-            pre.setString(5,food.getType());
+            pre.setString(2, food.getImage());
+            pre.setDouble(3, food.getPrice());
+            pre.setString(4, food.getDescription());
+            pre.setString(5, food.getType());
             pre.execute();
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error in addUser", e);
@@ -56,14 +56,61 @@ public class FoodService implements IFoodService {
     }
 
     @Override
-    public void deleteFood(int foodItemID) throws SQLException {
-        Connection connection = connectJDBC.getConnection();
-        String sql = "delete from users where foodItemID = ?";
-        try (PreparedStatement pre = connection.prepareStatement(sql)) {
-            pre.setInt(1, foodItemID);
+    public void updateFood(int foodItemID, Food food) {
+        String sql = "UPDATE food SET name = ?, price = ?, description = ?, image = ?, type = ?, stock = ? WHERE foodItemID = ?";
+        try (Connection connection = connectJDBC.getConnection();
+             PreparedStatement pre = connection.prepareStatement(sql)) {
+            pre.setString(1, food.getName());
+            pre.setDouble(2, food.getPrice());
+            pre.setString(3, food.getDescription());
+            pre.setString(4, food.getImage());
+            pre.setString(5, food.getType());
+            pre.setBoolean(6, food.isStock());
+            pre.setInt(7, food.getFoodItemID());
             pre.execute();
         } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Error in deleteUser", e);
+            throw new RuntimeException(e);
         }
     }
+    @Override
+    public void deleteFood(int foodItemID) {
+        String sql = "DELETE FROM food WHERE foodItemID = ?";
+        try (Connection connection = connectJDBC.getConnection();
+             PreparedStatement pre = connection.prepareStatement(sql)) {
+            pre.setInt(1, foodItemID);
+            int rowsAffected = pre.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Món ăn đã được xóa thành công.");
+            } else {
+                System.out.println("Không tìm thấy món ăn với ID đã cho.");
+            }
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Lỗi khi xóa món ăn", e);
+        }
+    }
+
+    @Override
+    public Food getFoodById(int foodItemID) {
+        String sql = "select * from food where foodItemID = ?";
+        Food food = null;
+        try (Connection conn = connectJDBC.getConnection();
+             PreparedStatement pre = conn.prepareStatement(sql)) {
+            pre.setInt(1, foodItemID);
+            try (ResultSet resultSet = pre.executeQuery()) {
+                if (resultSet.next()) {
+                    String name = resultSet.getString("name");
+                    int price = resultSet.getInt("price");
+                    String description = resultSet.getString("description");
+                    String image = resultSet.getString("image");
+                    String type = resultSet.getString("type");
+                    boolean stock =resultSet.getBoolean("stock");
+                     food = new Food(foodItemID, name, price, description, image, type, stock);
+                }
+            }
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error in getUserById", e);
+        }
+        return food;
+    }
+
 }
