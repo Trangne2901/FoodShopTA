@@ -3,7 +3,7 @@ package com.example.foodshoptranganh.model;
 public class Food {
     private int foodItemID;
     private String name;
-    private double price;
+    private int price;
     private String description;
     private String image;
     private String type;
@@ -12,7 +12,7 @@ public class Food {
     public Food() {
     }
 
-    public Food(String name, double price, String description, String image, String type) {
+    public Food(String name, int price, String description, String image, String type) {
         this.name = name;
         this.price = price;
         this.description = description;
@@ -20,7 +20,7 @@ public class Food {
         this.type = type;
     }
 
-    public Food(int foodItemID, String name, double price, String description, String image, String type, boolean stock) {
+    public Food(int foodItemID, String name, int price, String description, String image, String type, boolean stock) {
         this.foodItemID = foodItemID;
         this.name = name;
         this.price = price;
@@ -46,11 +46,11 @@ public class Food {
         this.name = name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
