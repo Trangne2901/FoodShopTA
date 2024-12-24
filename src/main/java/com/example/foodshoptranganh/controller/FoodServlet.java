@@ -39,9 +39,9 @@ public class FoodServlet extends HttpServlet {
             case "edit":
                 showUpdateFood(request, response);
                 break;
-            case "delete":
-                adminDeleteFood(request, response);
-                break;
+//            case "delete":
+//                adminDeleteFood(request, response);
+//                break;
             default:
                 showAllFoodAction(request, response);
                 break;
@@ -60,16 +60,16 @@ public class FoodServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-
-    private void adminDeleteFood(HttpServletRequest request, HttpServletResponse response) {
-        int foodItemID = Integer.parseInt(request.getParameter("foodItemID"));
-        try {
-            foodService.deleteFood(foodItemID);
-            showAllFoodAction(request, response);
-        } catch (ServletException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//
+//    private void adminDeleteFood(HttpServletRequest request, HttpServletResponse response) {
+//        int foodItemID = Integer.parseInt(request.getParameter("foodItemID"));
+//        try {
+//            foodService.deleteFood(foodItemID);
+//            showAllFoodAction(request, response);
+//        } catch (ServletException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
 
     private void showAllFoodAction(HttpServletRequest request, HttpServletResponse response) throws

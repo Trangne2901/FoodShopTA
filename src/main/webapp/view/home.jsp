@@ -9,6 +9,9 @@
 </head>
 <body>
 <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="/image/logo.png" alt="Logo" style="width: 200px; height: 200px">
+    </div>
     <ul>
         <li><a href="#"><i class="icon">🏠</i> Home</a></li>
         <li><a href="#"><i class="icon">🍽️</i> Món ăn</a></li>
@@ -47,19 +50,19 @@
         <c:forEach var="food" items="${foodList}">
             <tr>
                 <td>${food.foodItemID}</td>
-                <td><img style="width: 50px;height:50px" src="${food.image}" alt="Anh"></td>
+                <td><img style="width: 100px;height:100px" src="${food.image}" alt="Anh"></td>
                 <td>${food.name}</td>
-                <td><fmt:formatNumber value="${food.price}"/></td>
+                <td><fmt:formatNumber value="${food.price}" /></td>
                 <td>${food.description}</td>
                 <td>${food.type}</td>
                 <td>${food.stock == true ? "Còn hàng" : "Hết hàng"}</td>
                 <td>
                     <a href="/homeAdmin?action=edit&foodItemID=${food.foodItemID}">
-                        <button style="background-color: #ffc107; color: black; border: none; padding: 5px;margin-bottom: 5px; cursor: pointer;">✏️ Sửa</button>
+                        <button style=" padding: 5px;margin-bottom: 5px; cursor: pointer;">✏️</button>
                     </a>
-                    <a href="/homeAdmin?action=delete&foodItemID=${food.foodItemID}" onclick="return confirm('Bạn có chắc muốn xóa món ăn này?');">
-                        <button style="background-color: #dc3545; color: white; border: none; padding: 5px; cursor: pointer;">🗑️ Xóa</button>
-                    </a>
+<%--                    <a href="/homeAdmin?action=delete&foodItemID=${food.foodItemID}" onclick="return confirm('Bạn có chắc muốn xóa món ăn này?');">--%>
+<%--                        <button style="background-color: #dc3545; color: white; border: none; padding: 5px; cursor: pointer;">🗑️ Xóa</button>--%>
+<%--                    </a>--%>
                 </td>
             </tr>
         </c:forEach>

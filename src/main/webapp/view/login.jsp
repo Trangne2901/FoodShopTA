@@ -13,7 +13,7 @@
     <div class = "login-form">
         <form action="/user?action=login" method="post">
             <div class="form-group">
-                <label for="username">Tên người dùng</label>
+                <label for="username">Email</label>
                 <input type="text" id="username" name="email" placeholder="Nhập email người dùng" required>
             </div>
             <div class="form-group">

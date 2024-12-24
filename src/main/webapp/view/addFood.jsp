@@ -25,7 +25,9 @@
         <input type="text" id="type" name="type" required>
 
         <button type="submit">Thêm Món Ăn</button>
-    </form>
+        <a href="/homeAdmin">
+            <button type="button" class="cancel-btn">Hủy</button>
+        </a>    </form>
 </div>
 </body>
 </html>

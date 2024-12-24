@@ -31,6 +31,9 @@ public class UserServlet extends HttpServlet {
             case "logout":
                 resp.sendRedirect("/view/login.jsp");
                 break;
+                case "register":
+                resp.sendRedirect("/view/register.jsp");
+                break;
         }
     }
 
