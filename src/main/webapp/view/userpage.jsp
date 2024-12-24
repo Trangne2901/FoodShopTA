@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/userpage.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="js/userpage.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Website</title>
@@ -16,14 +17,6 @@
 <body>
 <header>
     <h3>Mỳ cay Trang Anh</h3>
-    <nav>
-        <ul>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#orders">Online Orders</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
     <div class="header-icons">
         <a href="www.google.com">
             <i class="fas fa-search"></i>
@@ -82,7 +75,7 @@
                     <img src="${food.image}" alt="${food.name}">
                     <div class="price">
                         <p class="dish">${food.name}</p>
-                        <p class="cost"><fmt:formatNumber value="${food.price}" type="currency" currencySymbol="VND"/></p>
+                        <p class="cost"><fmt:formatNumber value="${food.price}"  type="currency" currencySymbol="VND"/></p>
                     </div>
                     <p class="text">${food.description}</p>
                     <div class="icons">
@@ -93,6 +86,26 @@
                     <button>Order Now</button>
                 </div>
             </c:forEach>
+        </div>
+    </section>
+    <section id="orders">
+        <h3>How To Order</h3>
+        <div id="steps">
+            <div class="step-one">
+                <i class="fa fa-utensils"></i>
+                <h4>You Order from The menu</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis aut placeat adipisci minima pariatur soluta, recusandae sapiente itaque velit porro.</p>
+            </div>
+            <div class="step-two">
+                <i class="fas fa-mug-hot"></i>
+                <h4>We prepare Your Meal</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis aut placeat adipisci minima pariatur soluta, recusandae sapiente itaque velit porro.</p>
+            </div>
+            <div class="step-three">
+                <i class="fa fa-truck"></i>
+                <h4>We Deliver</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis aut placeat adipisci minima pariatur soluta, recusandae sapiente itaque velit porro.</p>
+            </div>
         </div>
     </section>
 </main>
