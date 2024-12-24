@@ -18,10 +18,11 @@
     <h3>Mỳ cay Trang Anh</h3>
     <nav>
         <ul>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#orders">Online Orders</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#menu">Thực Đơn</a></li>
+<%--            <li><a href="#about">Về Chúng Tôi</a></li>--%>
+            <li><a href="#orders">Đặt Hàng Trực Tuyến</a></li>
+            <li><a href="#contact">Liên Hệ</a></li>
+
         </ul>
     </nav>
     <div class="header-icons">
@@ -79,7 +80,7 @@
         <div id="dishes">
             <c:forEach var="food" items="${foodList}">
                 <div class="dish-item">
-                    <img src="${food.image}" alt="${food.name}">
+                    <img style="width: 280px;height: 280px" src="${food.image}" alt="${food.name}">
                     <div class="price">
                         <p class="dish">${food.name}</p>
                         <p class="cost"><fmt:formatNumber value="${food.price}" type="currency" currencySymbol="VND"/></p>
