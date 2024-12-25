@@ -34,6 +34,11 @@ public class UserServlet extends HttpServlet {
                 case "register":
                 resp.sendRedirect("/view/register.jsp");
                 break;
+            default:
+                req.setAttribute("foodList",foodService.getAllFoodItems());
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/userpage.jsp");
+                dispatcher.forward(req, resp);
+                break;
         }
     }
 

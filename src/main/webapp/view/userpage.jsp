@@ -15,6 +15,9 @@
     <title>Trang chủ</title>
 </head>
 <body>
+
+
+
 <header>
     <h3>Mỳ cay Trang Anh</h3>
     <nav>
@@ -47,9 +50,10 @@
         <li><a href="www.google.com">
             <i class="fas fa-search"></i>
         </a></li>
-        <li><a href="#cart">
+        <li><a href="cart.jsp">
             <i class="fas fa-shopping-cart"></i>
         </a></li>
+
     </ul>
     <button class="hamburger">
         <i class="menuIcon material-icons">menu</i>
@@ -85,6 +89,7 @@
         <h3>Our Dishes</h3>
         <div id="dishes">
             <c:forEach var="food" items="${foodList}">
+                <form action="cart?action=addToCart&id=${food.foodItemID}" method="post">
                 <div class="dish-item">
                     <img style="width: 280px;height: 280px" src="${food.image}" alt="${food.name}">
                     <div class="price">
@@ -97,8 +102,9 @@
                             <i class="fa fa-clock"></i><span>30 mins</span>
                         </div>
                     </div>
-                    <button>Order Now</button>
+                    <button type="submit">Order Now</button>
                 </div>
+                </form>
             </c:forEach>
         </div>
     </section>

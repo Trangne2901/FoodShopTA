@@ -182,6 +182,7 @@ span {
     grid-template-columns: 320px 320px 320px;
     grid-template-rows: 500px 500px;
     justify-content: center;
+    gap: 40px;
 }
 
 .dish-one, .dish-two, .dish-three, .dish-four, .dish-five, .dish-six {
