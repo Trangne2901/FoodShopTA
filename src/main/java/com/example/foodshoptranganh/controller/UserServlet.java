@@ -56,13 +56,14 @@ public class UserServlet extends HttpServlet {
         }
     }
     private void userRegister(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
-        String fullName=req.getParameter("fullname");
+        String fullName=req.getParameter("fullName");
         String phoneNumber=req.getParameter("phoneNumber");
         String address=req.getParameter("address");
         String email= req.getParameter("email");
         String password=req.getParameter("password");
         String urlAvatar=req.getParameter("urlAvatar");
         User newUser= new User(fullName,phoneNumber,address,email,password,urlAvatar);
+        System.out.println(newUser);
         userService.registerUser(newUser);
         RequestDispatcher dispatcher=req.getRequestDispatcher("view/login.jsp");
         dispatcher.forward(req,resp);

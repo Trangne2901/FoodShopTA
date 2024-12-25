@@ -13,7 +13,7 @@
         <form action="/user?action=register" method="post">
             <div class="form-group">
                 <label for="fullname">Họ và tên</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên" required>
+                <input type="text" id="fullname" name="fullName" placeholder="Nhập họ và tên" required>
             </div>
             <div class="form-group">
                 <label for="phone">Số điện thoại</label>
