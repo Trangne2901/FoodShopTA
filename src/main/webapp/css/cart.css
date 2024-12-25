@@ -1,0 +1,219 @@
+body {
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+h1 {
+    font-weight: 100;
+    text-align: center;
+    margin: 20px 0;
+}
+
+label {
+    color: #aaa;
+    display: inline-block;
+    margin: 0 0 10px 0;
+}
+
+.shopping-cart {
+    margin-top: 20px;
+    width: 80%;
+    margin: auto;
+    border: 1px solid #eee;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.column-labels {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.column-labels label {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.product:last-child {
+    border-bottom: none;
+}
+
+.product-image {
+    flex-basis: 15%;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100px;
+}
+
+.product-details {
+    flex-basis: 30%;
+}
+
+.product-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-description {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.product-price,
+.product-quantity,
+.product-removal,
+.product-line-price {
+    flex-basis: 10%;
+    text-align: center;
+}
+
+.product-quantity input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.remove-product:hover {
+    background-color: #a44;
+}
+
+.totals {
+    margin-top: 20px;
+    text-align: right;
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+}
+
+.totals-item {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+    font-size: 1em;
+}
+
+.totals-item label {
+    flex-basis: 79%;
+    text-align: right;
+}
+
+.totals-item .totals-value {
+    flex-basis: 21%;
+    text-align: right;
+}
+
+.totals-item-total {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.checkout {
+    background: #6b6;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: auto; /* Đẩy nút sang phải */
+    display: block; /* Đảm bảo hiển thị như một khối */
+    font-size: 1.2em;
+}
+
+.checkout:hover {
+    background-color: #494;
+}
+
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+    .shopping-cart {
+        margin: 0;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+    }
+
+    .column-labels {
+        display: none;
+    }
+
+    .product {
+        flex-wrap: wrap;
+    }
+
+    .product-image,
+    .product-details,
+    .product-price,
+    .product-quantity,
+    .product-removal,
+    .product-line-price {
+        flex-basis: 100%;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .product-image img {
+        max-width: 50%;
+        margin: auto;
+    }
+
+    .totals {
+        text-align: center;
+    }
+
+    .totals-item label {
+        text-align: left;
+    }
+}
+
+.product {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+/* Make adjustments for phone */
+@media screen and (max-width: 350px) {
+    .product-line-price:before {
+        content: 'Item Total: $';
+    }
+
+    .totals .totals-item label {
+        width: 60%;
+    }
+
+    .totals .totals-item .totals-value {
+        width: 40%;
+    }
+
+    .checkout {
+        width: 100%;
+    }
+}

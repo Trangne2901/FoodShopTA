@@ -17,16 +17,26 @@ header {
     height: 50px;
 }
 
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 header > h3 {
     width: 20%;
     color: #fff;
     /*font-family: 'Cookie', cursive;*/
     font-style: italic;
     font-size: 2em;
+    margin-top: 10px;
 }
 
 nav {
     width: 40%;
+    transform: translateX(-130px);
+    margin-top: 10px;
 }
 
 nav > ul {
@@ -424,14 +434,15 @@ h5 > span {
         width: 270px;
     }
 
-    #steps {
-        display: grid;
-        grid-template-columns: 300px 300px;
-        grid-template-rows: 300px 300px;
-        text-align: center;
-        grid-gap: 10px;
-        padding-top: 45px;
-    }
+    /*#steps {*/
+    /*    display: grid;*/
+    /*    grid-template-columns: 300px 300px;*/
+    /*    grid-template-rows: 300px 300px;*/
+    /*    text-align: center;*/
+    /*    grid-gap: 10px;*/
+    /*    padding-top: 45px;*/
+    /*    background: white;*/
+    /*}*/
 
     #combo {
         display: flex;
@@ -622,4 +633,11 @@ h5 > span {
 
     }
 
+}
+footer {
+    background-color: hsl(230, 17%, 14%);
+    height: 50px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }

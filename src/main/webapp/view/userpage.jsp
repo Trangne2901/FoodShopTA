@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/userpage.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="js/userpage.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
+    <title>Trang chủ</title>
 </head>
 <body>
 <header>
     <h3>Mỳ cay Trang Anh</h3>
     <nav>
         <ul>
+
             <li><a href="#menu">Thực Đơn</a></li>
 <%--            <li><a href="#about">Về Chúng Tôi</a></li>--%>
             <li><a href="#orders">Đặt Hàng Trực Tuyến</a></li>
@@ -25,14 +27,18 @@
 
         </ul>
     </nav>
-    <div class="header-icons">
-        <a href="www.google.com">
-            <i class="fas fa-search"></i>
-        </a>
-        <a href="#cart">
+    <div class="header-icons" style="display: flex; align-items: center; transform: translate(-230px,-7px);">
+        <div style="position: relative; margin-right: 10px;">
+            <i class="fas fa-search" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+            <input type="text" placeholder="Search..." style="padding-left: 30px; height: 30px; width: 200px;">
+        </div>
+        <a href="#cart" style="margin-right: 20px;">
             <i class="fas fa-shopping-cart"></i>
         </a>
+        <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/8/21/829850/Bat-Cuoi-Truoc-Nhung-07.jpg" class="avatar" alt="User Avatar">
     </div>
+
+
     <ul class="menu">
         <li><a class="menuItem" href="#menu">Menu</a></li>
         <li><a class="menuItem" href="#about">About Us</a></li>
@@ -83,7 +89,7 @@
                     <img style="width: 280px;height: 280px" src="${food.image}" alt="${food.name}">
                     <div class="price">
                         <p class="dish">${food.name}</p>
-                        <p class="cost"><fmt:formatNumber value="${food.price}" type="currency" currencySymbol="VND"/></p>
+                        <p class="cost"><fmt:formatNumber value="${food.price}"  type="currency" currencySymbol="VND"/></p>
                     </div>
                     <p class="text">${food.description}</p>
                     <div class="icons">
@@ -96,6 +102,7 @@
             </c:forEach>
         </div>
     </section>
+    <footer> <!-- Thanh ngang không có nội dung --> </footer>
 </main>
 </body>
 </html>
