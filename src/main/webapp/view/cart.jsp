@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="pmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Mỳ Cay Trang Anh - Cart</title>
@@ -30,9 +31,9 @@
                 <div class="product-details">
                     <div class="product-title">${item.name}</div>
                 </div>
-                <div class="product-price">${item.price}</div>
+                <div class="product-price"><pmt:formatNumber value="${item.price}"  type="currency" currencySymbol="VND"/></div>
                 <div class="product-quantity">${item.quantity}</div>
-                <div class="product-line-price">${item.price * item.quantity}</div>
+                <div class="product-line-price"><pmt:formatNumber value="${item.price * item.quantity}"  type="currency" currencySymbol="VND"/></div>
             </div>
         </c:forEach>
         <div class="totals">
@@ -43,8 +44,9 @@
                     <c:forEach var="item" items="${cart}">
                         <c:set var="subtotal" value="${subtotal + (item.price * item.quantity)}"/>
                     </c:forEach>
-                        ${subtotal}
+<%--                        ${subtotal}--%>
                 </div>
+                <pmt:formatNumber value="${subtotal}"  type="currency" currencySymbol="VND"/>
             </div>
         </div>
         <button class="checkout">Checkout</button>

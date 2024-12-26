@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -19,7 +20,12 @@
             <div class="form-group">
                 <label for="password">Mật khẩu</label>
                 <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                <c:if test="${not empty loginError}">
+                    <div class="error-message">${loginError}</div>
+                </c:if>
+
             </div>
+
             <button type = "submit">Đăng nhập</button>
             <br>
         </form>

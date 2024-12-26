@@ -44,7 +44,7 @@ public class UserService implements IUserService {
 
     @Override
     public void registerUser(User user) throws SQLException {
-        String query="INSERT INTO user (fullName, phoneNumber, address, email, password, role, status, urlAvatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String query="INSERT INTO user (fullName, phoneNumber, address, email, password, urlAvatar) VALUES (?, ?, ?, ?, ?, ?)";
        try (Connection connection = connectJDBC.getConnection()){
            PreparedStatement preparedStatement= connection.prepareStatement(query);
            preparedStatement.setString(1,user.getFullName());
@@ -52,9 +52,7 @@ public class UserService implements IUserService {
            preparedStatement.setString(3,user.getAddress());
            preparedStatement.setString(4,user.getEmail());
            preparedStatement.setString(5,user.getPassword());
-           preparedStatement.setString(6,user.getRole());
-           preparedStatement.setBoolean(7,user.isStatus());
-           preparedStatement.setString(8,user.getUrlAvatar());
+           preparedStatement.setString(6,user.getUrlAvatar());
            preparedStatement.execute();
        }catch (Exception e){
            e.printStackTrace();

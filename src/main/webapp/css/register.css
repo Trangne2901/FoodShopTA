@@ -7,6 +7,12 @@ body {
     height: 100vh;
     margin: 0;
 }
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
 
 .register-container {
     background-color: white;
@@ -22,8 +28,6 @@ body {
     background-image: url('https://cafebiz.cafebizcdn.vn/thumb_w/640/162123310254002176/2022/8/30/avatar1661849911831-16618499136181069110525.jpg');
     background-size: cover;
     padding: 100px;
-    border-radius: 8px 8px 0 0;
-    margin-bottom: 25px;
     opacity: 0.8;
 }
 
@@ -34,7 +38,7 @@ body {
 .form-group {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
