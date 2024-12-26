@@ -31,15 +31,17 @@
         </ul>
     </nav>
     <div class="header-icons" style="display: flex; align-items: center; transform: translate(-230px,-7px);">
-        <div style="position: relative; margin-right: 10px;">
+        <form action="user?action=search" method="post" style="position: relative; margin-right: 10px; display: flex; align-items: center;">
             <i class="fas fa-search" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
-            <input type="text" placeholder="Search..." style="padding-left: 30px; height: 30px; width: 200px;">
-        </div>
+            <input type="text" name="search" placeholder="Search..." style="padding-left: 30px; height: 30px; width: 200px;">
+            <button type="submit" style="height: 30px; margin-left: 10px;">Tìm kiếm</button>
+        </form>
         <a href="cart?action=showCart" style="margin-right: 20px;">
             <i class="fas fa-shopping-cart"></i>
         </a>
         <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/8/21/829850/Bat-Cuoi-Truoc-Nhung-07.jpg" class="avatar" alt="User Avatar">
     </div>
+
     <button class="hamburger">
         <i class="menuIcon material-icons">menu</i>
         <i class="closeIcon material-icons">close</i>

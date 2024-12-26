@@ -112,5 +112,31 @@ public class FoodService implements IFoodService {
         }
         return food;
     }
+    @Override
+    public List<Food> searchFoodByName(String name) {
+        List<Food> foodList = new ArrayList<>();
+        String query = "SELECT * FROM food WHERE name LIKE ?";
+
+        try (Connection conn = connectJDBC.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, "%" + name + "%");
+            ResultSet resultSet = pstmt.executeQuery();
+
+            while (resultSet.next()) {
+                int foodItemID = resultSet.getInt("foodItemID");
+                String foodName = resultSet.getString("name");
+                int price = resultSet.getInt("price");
+                String description = resultSet.getString("description");
+                String image = resultSet.getString("image");
+                String type = resultSet.getString("type");
+                boolean stock = resultSet.getBoolean("stock");
+                foodList.add(new Food(foodItemID, foodName, price, description, image, type, stock));
+            }
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error in getFoodByName", e);
+        }
+        return foodList;
+    }
+
 
 }

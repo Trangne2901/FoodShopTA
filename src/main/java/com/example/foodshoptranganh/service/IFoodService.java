@@ -11,4 +11,5 @@ public interface IFoodService {
     void updateFood(int foodItemID,Food food);
 //    void deleteFood(int foodItemID) ;
     Food getFoodById(int foodItemID);
+    List<Food> searchFoodByName(String name);
 }
