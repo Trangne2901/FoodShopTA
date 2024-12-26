@@ -40,6 +40,7 @@
         </a>
         <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/8/21/829850/Bat-Cuoi-Truoc-Nhung-07.jpg" class="avatar" alt="User Avatar">
     </div>
+
     <button class="hamburger">
         <i class="menuIcon material-icons">menu</i>
         <i class="closeIcon material-icons">close</i>
