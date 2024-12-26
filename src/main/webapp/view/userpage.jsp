@@ -40,10 +40,10 @@
 
 
     <ul class="menu">
-        <li><a class="menuItem" href="#menu">Menu</a></li>
-        <li><a class="menuItem" href="#about">About Us</a></li>
-        <li><a class="menuItem" href="#orders">Online Orders</a></li>
-        <li><a class="menuItem" href="#contact">Contact</a></li>
+        <li><a class="menuItem" href="#menu">Thực Đơn</a></li>
+<%--        <li><a class="menuItem" href="#about">Về Chúng Tôi</a></li>--%>
+        <li><a class="menuItem" href="#orders">Đặt Hàng Trực Tuyến</a></li>
+        <li><a class="menuItem" href="#contact">Liên Hệ</a></li>
         <li><a href="www.google.com">
             <i class="fas fa-search"></i>
         </a></li>
