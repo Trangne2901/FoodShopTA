@@ -51,24 +51,16 @@ public class UserServlet extends HttpServlet {
             case "register":
                 resp.sendRedirect("/view/register.jsp");
                 break;
-
-            default:
-                req.setAttribute("foodList", foodService.getAllFoodItems());
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/userpage.jsp");
-                dispatcher.forward(req, resp);
-                break;
         }
     }
-
-
-
 
     private void userLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         User user = userService.loginUser(req, email, password);
         if (user == null) {
-            req.setAttribute("loginError", "Email hoặc mật khẩu không chính xác. Vui lòng thử lại.")
+            req.setAttribute("loginError", "Email hoặc mật khẩu không chính xác. Vui lòng thử lại.");
+            // Chuyển hướng lại trang login.jsp
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view/login.jsp");
             dispatcher.forward(req, resp);
         } else {
@@ -90,15 +82,9 @@ public class UserServlet extends HttpServlet {
         String address = req.getParameter("address");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        String urlAvatar = req.getParameter("urlAvatar");
-        User newUser = new User(fullName, phoneNumber, address, email, password, urlAvatar);
-        userService.registerUser(newUser);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("view/login.jsp");
-        dispatcher.forward(req, resp);
-
         String confirmPassword = req.getParameter("confirm-password");
         String urlAvatar = req.getParameter("urlAvatar");
-        
+        // Giữ lại dữ liệu người dùng đã nhập
         req.setAttribute("fullName", fullName);
         req.setAttribute("phoneNumber", phoneNumber);
         req.setAttribute("address", address);
@@ -130,6 +116,7 @@ public class UserServlet extends HttpServlet {
         }
         RequestDispatcher dispatcher = req.getRequestDispatcher("view/register.jsp");
         dispatcher.forward(req, resp);
+
     }
 
     @Override
