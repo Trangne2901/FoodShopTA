@@ -56,7 +56,7 @@ public class CartServlet extends HttpServlet {
             cart.add(cart1);
         }
         request.getSession().setAttribute("cart", cart);
-        response.sendRedirect("/user");
+        response.sendRedirect("/cart");
 
     }
 
@@ -72,8 +72,23 @@ public class CartServlet extends HttpServlet {
             case "showCart":
                 showCart(request, response);
                 break;
+                default:
+                    showHomeUser(request, response);
+                    break;
 
         }
+    }
+
+    private void showHomeUser(HttpServletRequest request, HttpServletResponse response) {
+       try{
+           request.setAttribute("foodList", foodService.getAllFoodItems());
+           RequestDispatcher dispatcher = request.getRequestDispatcher("/view/userpage.jsp");
+           dispatcher.forward(request, response);
+       } catch (ServletException e) {
+           throw new RuntimeException(e);
+       } catch (IOException e) {
+           throw new RuntimeException(e);
+       }
     }
 
 
