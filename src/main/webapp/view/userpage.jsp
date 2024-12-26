@@ -15,6 +15,9 @@
     <title>Trang chủ</title>
 </head>
 <body>
+
+
+
 <header>
     <h3>Mỳ cay Trang Anh</h3>
     <nav>
@@ -32,25 +35,12 @@
             <i class="fas fa-search" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
             <input type="text" placeholder="Search..." style="padding-left: 30px; height: 30px; width: 200px;">
         </div>
-        <a href="#cart" style="margin-right: 20px;">
+        <a href="cart?action=showCart" style="margin-right: 20px;">
             <i class="fas fa-shopping-cart"></i>
         </a>
         <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/8/21/829850/Bat-Cuoi-Truoc-Nhung-07.jpg" class="avatar" alt="User Avatar">
     </div>
 
-
-    <ul class="menu">
-        <li><a class="menuItem" href="#menu">Thực Đơn</a></li>
-<%--        <li><a class="menuItem" href="#about">Về Chúng Tôi</a></li>--%>
-        <li><a class="menuItem" href="#orders">Đặt Hàng Trực Tuyến</a></li>
-        <li><a class="menuItem" href="#contact">Liên Hệ</a></li>
-        <li><a href="www.google.com">
-            <i class="fas fa-search"></i>
-        </a></li>
-        <li><a href="#cart">
-            <i class="fas fa-shopping-cart"></i>
-        </a></li>
-    </ul>
     <button class="hamburger">
         <i class="menuIcon material-icons">menu</i>
         <i class="closeIcon material-icons">close</i>
@@ -85,6 +75,7 @@
         <h3>Our Dishes</h3>
         <div id="dishes">
             <c:forEach var="food" items="${foodList}">
+                <form action="cart?action=addToCart&id=${food.foodItemID}" method="post">
                 <div class="dish-item">
                     <img style="width: 280px;height: 280px" src="${food.image}" alt="${food.name}">
                     <div class="price">
@@ -97,8 +88,9 @@
                             <i class="fa fa-clock"></i><span>30 mins</span>
                         </div>
                     </div>
-                    <button>Order Now</button>
+                    <button type="submit">Order Now</button>
                 </div>
+                </form>
             </c:forEach>
         </div>
     </section>
