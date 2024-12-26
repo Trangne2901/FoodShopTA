@@ -35,26 +35,11 @@
             <i class="fas fa-search" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
             <input type="text" placeholder="Search..." style="padding-left: 30px; height: 30px; width: 200px;">
         </div>
-        <a href="#cart" style="margin-right: 20px;">
+        <a href="cart?action=showCart" style="margin-right: 20px;">
             <i class="fas fa-shopping-cart"></i>
         </a>
         <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/8/21/829850/Bat-Cuoi-Truoc-Nhung-07.jpg" class="avatar" alt="User Avatar">
     </div>
-
-
-    <ul class="menu">
-        <li><a class="menuItem" href="#menu">Menu</a></li>
-        <li><a class="menuItem" href="#about">About Us</a></li>
-        <li><a class="menuItem" href="#orders">Online Orders</a></li>
-        <li><a class="menuItem" href="#contact">Contact</a></li>
-        <li><a href="www.google.com">
-            <i class="fas fa-search"></i>
-        </a></li>
-        <li><a href="cart.jsp">
-            <i class="fas fa-shopping-cart"></i>
-        </a></li>
-
-    </ul>
     <button class="hamburger">
         <i class="menuIcon material-icons">menu</i>
         <i class="closeIcon material-icons">close</i>
