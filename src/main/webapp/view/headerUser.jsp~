@@ -35,7 +35,7 @@
         <form action="homeAdmin?action=search" method="post" style="position: relative; margin-right: 10px; display: flex; align-items: center;margin-left: -60px">
 <%--            <i class="fas fa-search" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>--%>
             <input type="text" name="search" placeholder="Nhập vào đây" style="padding-left: 30px; height: 30px; width: 200px;">
-            <button type="submit" style="height: 30px; margin-left: 2px;"> <i style="width: 30px" class="fas fa-search"></i> </button>
+            <button type="submit" style="height: 30px; margin-left: -10px;"> <i style="width: 30px" class="fas fa-search"></i> </button>
         </form>
         <a href="cart?action=showCart" style="margin-right: 20px;">
             <i  class="fas fa-shopping-cart"></i>

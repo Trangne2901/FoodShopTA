@@ -41,6 +41,9 @@ public class FoodServlet extends HttpServlet {
 //            case "delete":
 //                adminDeleteFood(request, response);
 //                break;
+            case"logoutUser":
+                response.sendRedirect("/view/login.jsp");
+                break;
             default:
                 showAllFoodAction(request, response);
                 break;
