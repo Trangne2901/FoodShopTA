@@ -6,6 +6,7 @@
 
 </head>
 <body>
+<jsp:include page="/view/sidebar.jsp"></jsp:include>
 <div class="container">
     <h1>Thêm Món Ăn</h1>
     <form action="/homeAdmin?action=addFood" method="post" >
@@ -26,7 +27,7 @@
 
         <button type="submit">Thêm Món Ăn</button>
         <a href="/homeAdmin">
-            <button type="button" class="cancel-btn">Hủy</button>
+            <button style=" background-color: #dc3545;" type="button" class="cancel-btn">Hủy</button>
         </a>    </form>
 </div>
 </body>

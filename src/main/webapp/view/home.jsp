@@ -8,20 +8,7 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-<div class="sidebar">
-    <div style="text-align: center; margin-bottom: 20px;">
-        <img src="/image/logo.png" alt="Logo" style="width: 200px; height: 200px">
-    </div>
-    <ul>
-        <li><a href="#"><i class="icon">🏠</i> Home</a></li>
-        <li><a href="#"><i class="icon">🍽️</i> Món ăn</a></li>
-        <li><a href="#"><i class="icon">🧾</i> Hóa đơn</a></li>
-        <li><a href="#"><i class="icon">📊</i> Doanh thu</a></li>
-    </ul>
-    <div class="logout">
-        <a href="/user?action=logout"><i class="icon">🚪</i> Đăng xuất</a>
-    </div>
-</div>
+<jsp:include page="/view/sidebar.jsp"></jsp:include>
 
 <div class="content">
     <h1>Danh sách Món Ăn</h1>

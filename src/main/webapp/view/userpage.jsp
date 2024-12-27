@@ -15,38 +15,8 @@
     <title>Trang chủ</title>
 </head>
 <body>
+<jsp:include page="/view/headerUser.jsp"></jsp:include>
 
-
-
-<header>
-    <h3>Mỳ cay Trang Anh</h3>
-    <nav>
-        <ul>
-
-            <li><a href="#menu">Thực Đơn</a></li>
-<%--            <li><a href="#about">Về Chúng Tôi</a></li>--%>
-            <li><a href="#orders">Đặt Hàng Trực Tuyến</a></li>
-            <li><a href="#contact">Liên Hệ</a></li>
-
-        </ul>
-    </nav>
-    <div class="header-icons" style="display: flex; align-items: center; transform: translate(-270px,-7px);">
-        <form action="homeAdmin?action=search" method="post" style="position: relative; margin-right: 10px; display: flex; align-items: center;">
-            <i class="fas fa-search" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
-            <input type="text" name="search" placeholder="Nhập vào đây" style="padding-left: 30px; height: 30px; width: 200px;">
-            <button type="submit" style="height: 30px; margin-left: 10px;">search</button>
-        </form>
-        <a href="cart?action=showCart" style="margin-right: 20px;">
-            <i class="fas fa-shopping-cart"></i>
-        </a>
-        <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/8/21/829850/Bat-Cuoi-Truoc-Nhung-07.jpg" class="avatar" alt="User Avatar">
-    </div>
-
-    <button class="hamburger">
-        <i class="menuIcon material-icons">menu</i>
-        <i class="closeIcon material-icons">close</i>
-    </button>
-</header>
 <main>
     <section id="menu">
     </section>
