@@ -12,6 +12,7 @@ body {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    height: 500px;
 }
 h1 {
     text-align: center;
@@ -25,8 +26,8 @@ label {
 }
 input[type="text"], input[type="number"], textarea, select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 5px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }

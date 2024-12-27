@@ -6,7 +6,9 @@
     <title>Mỳ Cay Trang Anh - Cart</title>
     <link rel="stylesheet" type="text/css" href="css/cart.css">
 </head>
-<body>
+<body style="background-color: white">
+<jsp:include page="/view/headerUser.jsp"></jsp:include>
+
 <h1>Giỏ Hàng Của Bạn</h1>
 <div class="shopping-cart">
 
@@ -16,11 +18,11 @@
 
     <c:if test="${not empty cart}">
         <div class="column-labels">
-            <label class="product-image">Image</label>
-            <label class="product-details">Product</label>
-            <label class="product-price">Price</label>
-            <label class="product-quantity">Quantity</label>
-            <label class="product-line-price">Total</label>
+            <label class="product-image">Hình ảnh</label>
+            <label class="product-details">Tên món ăn</label>
+            <label class="product-price">Giá</label>
+            <label class="product-quantity">Số lượng</label>
+            <label class="product-line-price">Tổng</label>
         </div>
 
         <c:forEach var="item" items="${cart}">
@@ -38,7 +40,7 @@
         </c:forEach>
         <div class="totals">
             <div class="totals-item">
-                <label>Subtotal:</label>
+                <label>Tổng tiền:</label>
                 <div class="totals-value">
                     <c:set var="subtotal" value="0"/>
                     <c:forEach var="item" items="${cart}">

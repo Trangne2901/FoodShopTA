@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/edit.css">
 </head>
 <body>
+<jsp:include page="/view/sidebar.jsp"></jsp:include>
 <div class="container">
     <h1>Sửa Món Ăn</h1>
     <div class="content">
