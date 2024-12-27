@@ -47,19 +47,21 @@
         <div id="dishes">
             <c:forEach var="food" items="${foodList}">
                 <form action="cart?action=addToCart&id=${food.foodItemID}" method="post">
-                <div class="dish-item">
+                <div  style="padding: 10px" class="dish-item">
                     <img style="width: 280px;height: 280px" src="${food.image}" alt="${food.name}">
                     <div class="price">
-                        <p class="dish">${food.name}</p>
-                        <p class="cost"><fmt:formatNumber value="${food.price}"  type="currency" currencySymbol="VND"/></p>
+                        <p style="font-size: 26px" class="dish">${food.name}</p>
+<%--                        <p class="cost"><fmt:formatNumber value="${food.price}"  type="currency" currencySymbol="VND"/></p>--%>
                     </div>
-                    <p class="text">${food.description}</p>
+                    <p style="height: 50px; max-height: 50px; max-width: 280px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" class="text">${food.description}</p>
+                    <p style="font-size: 2.0em" class="cost"><fmt:formatNumber value="${food.price}"  type="currency" currencySymbol="VND"/></p>
+
                     <div class="icons">
                         <div class="clock">
                             <i class="fa fa-clock"></i><span>30 mins</span>
                         </div>
                     </div>
-                    <button type="submit">Order Now</button>
+                    <button style="width: 115px;height: 30px;font-size: 15px"  type="submit">Order Now</button>
                 </div>
                 </form>
             </c:forEach>
