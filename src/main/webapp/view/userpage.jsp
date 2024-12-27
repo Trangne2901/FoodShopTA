@@ -16,6 +16,7 @@
 </head>
 <body>
 <jsp:include page="/view/headerUser.jsp"></jsp:include>
+
 <main>
     <section id="menu">
     </section>
