@@ -31,11 +31,12 @@
 
         </ul>
     </nav>
-    <div class="header-icons" style="display: flex; align-items: center; transform: translate(-230px,-7px);">
-        <div style="position: relative; margin-right: 10px;">
+    <div class="header-icons" style="display: flex; align-items: center; transform: translate(-270px,-7px);">
+        <form action="homeAdmin?action=search" method="post" style="position: relative; margin-right: 10px; display: flex; align-items: center;">
             <i class="fas fa-search" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
-            <input type="text" placeholder="Search..." style="padding-left: 30px; height: 30px; width: 200px;">
-        </div>
+            <input type="text" name="search" placeholder="Nhập vào đây" style="padding-left: 30px; height: 30px; width: 200px;">
+            <button type="submit" style="height: 30px; margin-left: 10px;">search</button>
+        </form>
         <a href="cart?action=showCart" style="margin-right: 20px;">
             <i class="fas fa-shopping-cart"></i>
         </a>
