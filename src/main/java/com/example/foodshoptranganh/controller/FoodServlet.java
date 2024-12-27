@@ -20,8 +20,7 @@ public class FoodServlet extends HttpServlet {
     private FoodService foodService = new FoodService();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {;
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         String action = request.getParameter("action");
@@ -47,6 +46,8 @@ public class FoodServlet extends HttpServlet {
                 break;
         }
     }
+
+
 
     private void showUpdateFood(HttpServletRequest request, HttpServletResponse response) {
         int foodItemID = Integer.parseInt(request.getParameter("foodItemID"));
@@ -93,6 +94,7 @@ public class FoodServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         String action = request.getParameter("action");
+
         System.out.println(action);
         if (action == null) {
             action = "";
@@ -104,12 +106,24 @@ public class FoodServlet extends HttpServlet {
             case "editFood":
                 adminUpdateFood(request, response);
                 break;
+            case "search":
+                searchFoodByName(request, response);
+                break;
 
             default:
                 showAllFoodAction(request, response);
                 break;
         }
 
+
+    }
+
+    private void searchFoodByName(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        String nameProduct = request.getParameter("search");
+        List<Food> foodList = foodService.searchFoodByName(nameProduct);
+        request.setAttribute("foodList", foodList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/userpage.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void adminUpdateFood(HttpServletRequest request, HttpServletResponse response) throws ServletException {
